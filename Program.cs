@@ -14,7 +14,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// HTTPS is handled by reverse proxy
+// app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
