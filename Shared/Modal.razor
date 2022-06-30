@@ -15,13 +15,13 @@
 
 @code {
 
-    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
 
     [Parameter] public bool IsOpen { get; set; } = true;
 
-    [Parameter] public string? ModalClass { get; set; }
+    [Parameter] public string ModalClass { get; set; }
 
-    [Parameter] public List<string>? Gallery { get; set; }
+    [Parameter] public List<string> Gallery { get; set; }
 
     public void Close() => IsOpen = false;
 }   

@@ -1,13 +1,6 @@
 ﻿@page "/"
 
-<PageTitle>Home - Newt Welch</PageTitle>
-
-<HeadContent>
-    <meta name="newt welch" />
-</HeadContent>
-
 <h1/>
-
 
 @* ==== *@
 @* HOME *@
@@ -65,23 +58,30 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
       <div class="max-w-screen-xl px-20 py-20 mx-auto bg-white text-gray-900 rounded-lg shadow-lg">
 
         <form action="https://formsubmit.co/welchnewt@gmail.com" method="POST">
-            <h2 class="text-4xl lg:text-5xl font-secular text-primary leading-tight mb-10">SEND ME A MESSAGE!</h2>
+          <h2 class="text-4xl lg:text-5xl font-secular text-primary leading-tight mb-10">SEND ME A MESSAGE!</h2>
+
           <div>
-            <label for="name" class="uppercase text-darkbg2 font-secular">Name</label>
+            <label for="name" class="uppercase text-darkbg2 font-secular">
+              Name</label>
             <input class="w-full bg-gray-200 font-secular text-darkbg2 opacity-80 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-              type="text" placeholder="Your name / the subject of your message">
+              type="text" name="name" required placeholder="Your name / the subject of your message">
           </div>
+
           <div class="mt-8">
-            <label for="email" class="uppercase text-darkbg2 font-secular">Email</label>
+            <label for="email" class="uppercase text-darkbg2 font-secular">
+              Email</label>
             <input class="w-full bg-gray-200 font-secular text-darkbg2 opacity-80 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                    id="email" name="email" type="email" autocomplete="email" required placeholder="your@email.com">
           </div>
+
           <div class="mt-8">
-            <label for="message" class="uppercase text-darkbg2 font-secular">Message</label>
-            <textarea name="message" id="message" placeholder="Your lengthy message here"
+            <label for="message" class="uppercase text-darkbg2 font-secular">
+              Message</label>
+            <textarea name="message" id="message" required placeholder="Your lengthy message here"
               class="w-full h-32 bg-gray-200 font-secular text-darkbg2 opacity-80 mt-2 p-3  rounded-lg focus:outline-none focus:shadow-outline"></textarea>
           </div>
-          <div class="mt-8">
+
+          <div class="mt-8">    
             <button type="submit"
               class="uppercase font-secular tracking-wide bg-primary text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
               Send Message
