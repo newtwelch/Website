@@ -8,39 +8,34 @@
 
 <h1/>
 
+
 @* ==== *@
 @* HOME *@
 @* ==== *@
-<div class="h-screen flex flex-col items-center justify-center -mt-24 md:mt-0">
-    <h1 class="text-2xl text-white text-center font-secular">Hanlo! I am</h1>
-    <h2 class="text-7xl text-center font-unica">
-        <span class="text-secondary" >Newt</span>
-        <span class="text-primary" >Welch</span>
-    </h2>
+<div class="grid grid-rows-5 w-full h-screen">
+    <div class="flex flex-col items-center justify-center row-span-4">
+        <h1 class="text-2xl text-white text-center font-secular">Hanlo! I am</h1>
+        <h2 class="text-7xl text-center font-unica">
+            <span class="text-secondary" >Newt</span>
+            <span class="text-primary" >Welch</span>
+        </h2>
+    </div>
+
+<!-- -mt-96 md:-mt-52  -->
+
+        <button class="mx-auto z-10 text-white transition ease-in-out hover:-translate-y-5 hover:scale-110" href="#projects"
+                onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-14" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" /> </svg>
+        </button>
+    <!-- ARROW DOWN -->
+        <img src="/Images/Divider.png" class=""/>
 </div>
-
-<div class="grid items-center">
-    <a class="mx-auto -mt-96 md:-mt-52 text-white transition ease-in-out hover:-translate-y-5 hover:scale-110" href="#projects">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-14" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" /> </svg>
-    </a>
-</div>
-
-@* ============= *@
-@* GALLERY MODAL *@
-@* ============= *@
-<Modal IsOpen="@showModal">
-
-    @foreach (var image in gallery){
-        <img src="@image.Substring(7)" class="w-full aspect-video"/>
-    }
-
-</Modal>>
 
 @* ======== *@
 @* PROJECTS *@
 @* ======== *@
-<div class="flex w-screen h-screen items-center" id="projects">
+<div class="flex w-screen h-screen items-center bg-darkbg2" id="projects">
 
     <div class="grid grid-rows-3 grid-cols-3 gap-5 md:gap-10 m-auto">
         
@@ -59,13 +54,56 @@
 @* ======= *@
 @* CONTACT *@
 @* ======= *@
-<div class="flex w-screen h-screen items-center text-white" id="projects">
+<div class="flex w-screen h-screen items-center bg-gradient-to-b from-darkbg2 to-transparent">
 
-    CONTACT
+  <!-- a lot of the lines are just svg text, actual html is simple 
+A sample contact us page form written with tailwind css
+Illustration from undraw.co by the amazing Katerina Limpitsouni
+-->
+<body class="bg-gray-800 text-gray-100 px-8 py-12">
+     
+      <div class="max-w-screen-xl px-20 py-20 mx-auto bg-white text-gray-900 rounded-lg shadow-lg">
 
+        <form action="https://formsubmit.co/welchnewt@gmail.com" method="POST">
+            <h2 class="text-4xl lg:text-5xl font-secular text-primary leading-tight mb-10">SEND ME A MESSAGE!</h2>
+          <div>
+            <label for="name" class="uppercase text-darkbg2 font-secular">Name</label>
+            <input class="w-full bg-gray-200 font-secular text-darkbg2 opacity-80 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              type="text" placeholder="Your name / the subject of your message">
+          </div>
+          <div class="mt-8">
+            <label for="email" class="uppercase text-darkbg2 font-secular">Email</label>
+            <input class="w-full bg-gray-200 font-secular text-darkbg2 opacity-80 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                   id="email" name="email" type="email" autocomplete="email" required placeholder="your@email.com">
+          </div>
+          <div class="mt-8">
+            <label for="message" class="uppercase text-darkbg2 font-secular">Message</label>
+            <textarea name="message" id="message" placeholder="Your lengthy message here"
+              class="w-full h-32 bg-gray-200 font-secular text-darkbg2 opacity-80 mt-2 p-3  rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+          </div>
+          <div class="mt-8">
+            <button type="submit"
+              class="uppercase font-secular tracking-wide bg-primary text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </body>
 </div>
 
 
+@* ============= *@
+@* GALLERY MODAL *@
+@* ============= *@
+<Modal IsOpen="@showModal">
+
+    @foreach (var image in gallery){
+        <img src="@image.Substring(7)" class="w-full aspect-video"/>
+    }
+
+</Modal>>
 @code
 {
     private List<string> projects = Directory.GetFiles("wwwroot/Images/Projects", "*.png").ToList();
