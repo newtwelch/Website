@@ -46,7 +46,18 @@ namespace Website.Models
                 OnPropertyChanged();
             }
         }
+        private string _ogImage;
 
+        public string OgImage
+        {
+            get => _ogImage;
+            set
+            {
+                _ogImage = value;
+                OnPropertyChanged();
+            }
+        }
+        
         private string _twitterCard;
 
         public string TwitterCard
@@ -123,6 +134,7 @@ namespace Website.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string OgTitle { get; set; }
+        public string OgImage { get; set; }
         public string TwitterCard { get; set; }
     }
 }
