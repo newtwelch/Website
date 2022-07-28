@@ -46,6 +46,7 @@ namespace Website.Models
                 OnPropertyChanged();
             }
         }
+
         private string _ogImage;
 
         public string OgImage
@@ -58,6 +59,19 @@ namespace Website.Models
             }
         }
         
+    private string _ogUrl;
+
+        public string OgUrl
+        {
+            get => _ogUrl;
+            set
+            {
+                _ogUrl = value;
+                OnPropertyChanged();
+            }
+        }
+        
+
         private string _twitterCard;
 
         public string TwitterCard
@@ -117,6 +131,8 @@ namespace Website.Models
                     Title = "Home - Newt Welch",
                     Description = "The finest graphic design portfolio by Newt Welch the Space Pirate",
                     OgTitle = "Home of Newt Welch's Portfolio",
+                    OgUrl = "https://newt.fork.gg",
+                    OgImage = "/wwwroot/Images/Profile.png",
                     TwitterCard = "Newt Welch - Graphic Design Portfolio"
                 });
         }
@@ -135,6 +151,7 @@ namespace Website.Models
         public string Description { get; set; }
         public string OgTitle { get; set; }
         public string OgImage { get; set; }
+        public string OgUrl { get; set; }
         public string TwitterCard { get; set; }
     }
 }
