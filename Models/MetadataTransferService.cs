@@ -110,13 +110,19 @@ namespace Website.Models
                 metadataValue = new()
                 {
                     Title = "Default",
-                    Description = "Default"
+                    Description = "Default",
+                    OgTitle = "Default",
+                    OgImage = "Default",
+                    OgUrl = "Default",
+                    
                 };
             }
 
             Title = metadataValue.Title ?? throw new ArgumentNullException(nameof(metadataValue.Title));
-            Description = metadataValue.Description ?? throw new ArgumentNullException(nameof(MetadataValue.Description));
+            Description = metadataValue.Description ?? throw new ArgumentNullException(nameof(metadataValue.Description));
+            OgImage = metadataValue.OgImage ?? throw new ArgumentNullException(nameof(metadataValue.OgImage));
             OgTitle = metadataValue.OgTitle ?? throw new ArgumentNullException(nameof(metadataValue.OgTitle));
+            OgUrl = metadataValue.OgUrl ?? throw new ArgumentNullException(nameof(metadataValue.OgUrl));
             TwitterCard = metadataValue.TwitterCard ?? throw new ArgumentNullException(nameof(metadataValue.TwitterCard));
         }
 
